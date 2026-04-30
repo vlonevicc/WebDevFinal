@@ -6,10 +6,12 @@ require('dotenv').config();
 
 const app = express();
 
-// middleware
+//
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/api/posts', postRoutes);
+app.use('/api/recipes', require('./routes/recipes'));
+app.use('/api/pantry', require('./routes/pantry'));
+app.use('/api/grocery', require('./routes/grocery'));
 
 // connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
