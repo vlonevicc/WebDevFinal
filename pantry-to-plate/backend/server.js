@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const postRoutes = require('./routes/posts');
+
 require('dotenv').config();
 
 const app = express();
@@ -14,7 +14,7 @@ app.use('/api/pantry', require('./routes/pantry'));
 app.use('/api/grocery', require('./routes/grocery'));
 
 // connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');
   })
