@@ -1,1 +1,152 @@
-<p>cookbook works!</p>
+<div class="px-8 py-10 max-w-7xl mx-auto space-y-12">
+
+  <!-- 🔥 HEADER -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+
+    <div>
+      <h1 class="text-5xl font-headline italic">Your Cookbook</h1>
+      <p class="text-gray-500 mt-2 max-w-xl">
+        Curated recipes based on your pantry and saved favorites.
+      </p>
+    </div>
+
+    <!-- toggle (future functionality) -->
+    <div class="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full">
+      <span class="text-sm">Only show what I can make</span>
+      <div class="w-10 h-5 bg-[#4f6144] rounded-full relative">
+        <div class="w-4 h-4 bg-white rounded-full absolute right-1 top-0.5"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🧱 GRID -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+    <!-- ⭐ FEATURED RECIPE -->
+    <div class="md:col-span-8 bg-white rounded-xl shadow overflow-hidden flex flex-col">
+
+      <img class="w-full h-64 object-cover"
+        src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" />
+
+      <div class="p-8 space-y-4">
+
+        <div class="flex justify-between">
+          <span class="text-sm text-[#4f6144] font-semibold">
+            Dinner • 25 mins
+          </span>
+          <span class="text-gray-400 cursor-pointer">★</span>
+        </div>
+
+        <h2 class="text-3xl font-headline italic">
+          Heirloom Tomato & Basil Bucatini
+        </h2>
+
+        <p class="text-gray-500">
+          A simple pasta highlighting fresh tomatoes and basil.
+        </p>
+
+        <p class="text-sm text-gray-500">
+          ✔ All ingredients available
+        </p>
+
+        <button class="mt-2 bg-[#4f6144] text-white px-6 py-2 rounded-full hover:bg-[#3e4f36]">
+          Cook Now →
+        </button>
+
+      </div>
+    </div>
+
+    <!-- 🚫 OUT OF STOCK -->
+    <div class="md:col-span-4 bg-white rounded-xl shadow overflow-hidden flex flex-col">
+
+      <img class="w-full h-48 object-cover"
+        src="https://images.unsplash.com/photo-1547592166-23ac45744acd" />
+
+      <div class="p-6 space-y-3">
+
+        <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">
+          Missing Ingredients
+        </span>
+
+        <h3 class="text-xl font-headline italic">
+          Summer Grain Bowl
+        </h3>
+
+        <p class="text-sm text-gray-500">
+          Missing: Farro, Kale
+        </p>
+
+      </div>
+    </div>
+
+    <!-- ⚠️ NEEDS ITEMS -->
+    <div class="md:col-span-4 bg-white rounded-xl shadow overflow-hidden flex flex-col">
+
+     <img class="w-full h-48 object-cover"
+  src=" https://images.openai.com/static-rsc-4/wHVdk0jIQ78c3A8iTrTRslm2DuAVrJXKKb6RKsskRdI-xtjS_zUdS_6nKG9OExcOsVkYdExpZlrNI47vU6K_JbSQI5Sqxe4YEYHSOJKysWzfiZklmA2ralwB0xghdsWYETFNQZ0QxNtLrawrcVXzZS7uWtgS7RlcoLO4XHfVFg3_OUWjxMcciMKQCs_MEBvG?purpose=inline" />
+
+      <div class="p-6 space-y-3">
+
+        <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
+          Needs 2 items
+        </span>
+
+        <h3 class="text-xl font-headline italic">
+          Herb Roasted Chicken
+        </h3>
+
+        <button class="border border-gray-300 rounded-full py-2 text-sm hover:bg-gray-100">
+          Add Missing →
+        </button>
+
+      </div>
+    </div>
+
+    <!-- 🐟 READY RECIPE -->
+    <div class="md:col-span-4 bg-white rounded-xl shadow overflow-hidden">
+
+      <img class="w-full h-48 object-cover"
+        src="https://images.unsplash.com/photo-1467003909585-2f8a72700288" />
+
+      <div class="p-6 space-y-2">
+        <h3 class="text-xl font-headline italic">
+          Miso Glazed Salmon
+        </h3>
+        <p class="text-sm text-gray-500">High Protein • 8 ingredients</p>
+      </div>
+
+    </div>
+
+    <!-- 🥗 READY RECIPE -->
+    <div class="md:col-span-4 bg-white rounded-xl shadow overflow-hidden">
+
+      <img class="w-full h-48 object-cover"
+        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" />
+
+      <div class="p-6 space-y-2">
+        <h3 class="text-xl font-headline italic">
+          Avocado Pepita Slaw
+        </h3>
+        <p class="text-sm text-gray-500">Vegan • 5 ingredients</p>
+      </div>
+
+    </div>
+
+    <!-- ➕ ADD RECIPE -->
+    <div class="md:col-span-4 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center p-8 text-center hover:bg-gray-100 cursor-pointer">
+
+      <div class="text-3xl text-[#4f6144] mb-2">＋</div>
+
+      <h3 class="text-lg font-headline italic">
+        Import Recipe
+      </h3>
+
+      <p class="text-sm text-gray-500">
+        Paste a link or create your own
+      </p>
+
+    </div>
+
+  </div>
+</div>
