@@ -1,0 +1,66 @@
+<div class="flex justify-between items-center px-8 py-4 bg-[#faf9f5]/80 backdrop-blur sticky top-0 z-40">
+
+  <!-- LEFT (empty for now) -->
+  <div></div>
+
+  <!-- RIGHT SIDE -->
+  <div class="flex items-center gap-6">
+
+    <!--  Search -->
+    <div class="hidden md:flex items-center px-4 py-2 rounded-full bg-gray-100 border border-[#4f6144] focus-within:ring-2 focus-within:ring-[#4f6144]/30 transition">
+
+  <svg class="w-4 h-4 text-[#4f6144] mr-2" fill="none" stroke="currentColor" stroke-width="2"
+    viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+
+  <input 
+    class="bg-transparent outline-none text-sm w-48 placeholder:text-gray-400"
+    placeholder="Search ingredients..."
+  />
+</div>
+
+    <!--  Notifications -->
+    <button class="hover:opacity-70 transition">
+      <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path d="M18 8a6 6 0 10-12 0c0 7-3 7-3 7h18s-3 0-3-7"></path>
+        <path d="M13.73 21a2 2 0 01-3.46 0"></path>
+      </svg>
+    </button>
+
+    <!--  Settings -->
+    <button class="hover:opacity-70 transition">
+      <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33
+                 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51
+                 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06
+                 a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3
+                 a2 2 0 110-4h.09c.7 0 1.31-.4 1.51-1
+                 a1.65 1.65 0 00-.33-1.82l-.06-.06
+                 a2 2 0 112.83-2.83l.06.06
+                 a1.65 1.65 0 001.82.33h.01
+                 a1.65 1.65 0 001-1.51V3
+                 a2 2 0 114 0v.09c0 .7.4 1.31 1 1.51
+                 a1.65 1.65 0 001.82-.33l.06-.06
+                 a2 2 0 112.83 2.83l-.06.06
+                 a1.65 1.65 0 00-.33 1.82v.01
+                 c.2.6.81 1 1.51 1H21
+                 a2 2 0 110 4h-.09c-.7 0-1.31.4-1.51 1z"></path>
+      </svg>
+    </button>
+
+    <!--  Profile -->
+    <div class="w-9 h-9 rounded-full overflow-hidden">
+      <img 
+        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+
+</div>

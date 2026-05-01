@@ -1,20 +1,20 @@
 <div class="layout">
 
-  <!-- 🌑 OVERLAY (mobile only) -->
+  <!--  OVERLAY (mobile only) -->
   <div 
     *ngIf="isSidebarOpen" 
     class="fixed inset-0 bg-black/30 z-40 md:hidden"
     (click)="isSidebarOpen = false">
   </div>
 
-  <!-- 📚 SIDEBAR -->
+  <!--  SIDEBAR -->
   <aside 
     class="fixed top-0 left-0 h-full w-64 bg-[#f5f4f0] transform transition-transform z-50 md:translate-x-0 flex flex-col px-6 py-8"
     [class.translate-x-0]="isSidebarOpen"
     [class.-translate-x-full]="!isSidebarOpen"
   >
 
-    <!-- ❌ CLOSE BUTTON (mobile only) -->
+    <!--  CLOSE BUTTON (mobile only) -->
     <button 
       class="mb-4 md:hidden text-lg"
       (click)="isSidebarOpen = false">
@@ -64,7 +64,7 @@
 
   </aside>
 
-  <!-- 📄 MAIN CONTENT -->
+  <!--  MAIN CONTENT -->
   <main class="md:ml-64">
 
     <!-- ☰ OPEN BUTTON (mobile only) -->
@@ -75,6 +75,7 @@
         ☰
       </button>
     </div>
+      <app-topbar></app-topbar>
 
     <router-outlet></router-outlet>
 
