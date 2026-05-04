@@ -25,8 +25,6 @@ exports.addPantryItem = async (req, res) => {
 
 // Update item (quantity, threshold)
 exports.updatePantryItem = async (req, res) => {
-
-
     try {
         const updatedItem = await PantryItem.findByIdAndUpdate(
             req.params.id,
