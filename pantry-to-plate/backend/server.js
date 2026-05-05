@@ -1,14 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 require('dotenv').config();
 
 const app = express();
 
-//
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
 app.use('/api/recipes', require('./routes/recipes'));
 app.use('/api/pantry', require('./routes/pantry'));
 app.use('/api/grocery', require('./routes/grocery'));

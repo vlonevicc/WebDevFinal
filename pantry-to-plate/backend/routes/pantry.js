@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pantryController = require('../controllers/pantryController');
 
-router.get('/list', pantryController.getPantryList);
+router.get('/list', pantryController.getPantryItems);
 router.post('/add', pantryController.addPantryItem);
 router.delete('/delete/:id', pantryController.deletePantryItem);
-router.put('/:id', pantryController.updatePantryItems);
+router.put('/:id', pantryController.updatePantryItem);
 router.get('/low-stock', pantryController.getLowStockItems);
 
 router.get('/', (req, res) => {
