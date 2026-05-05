@@ -21,7 +21,7 @@ exports.getGroceryItem = async(req,res) => {
         const items = await GroceryItem.find();
         res.json(items);
     } catch (error) {
-        res.status(500).json({message: "Erro fetching grocery items"});
+        res.status(500).json({message: "Error fetching grocery items"});
     }
 }
 
@@ -41,7 +41,7 @@ exports.updateGroceryItems = async(req,res) => {
 };
 
 // delete a grocery item by ID
-exports.deletePantryItem = async(req,res) => {
+exports.deleteGroceryItem = async(req,res) => {
     try {
         await GroceryItem.findByIdAndDelete(req.params.id);
         res.json({message: "Item Deleted"});

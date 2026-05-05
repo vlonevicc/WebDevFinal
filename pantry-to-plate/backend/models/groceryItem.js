@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 // Grocery item schema
 const grocerySchema = new mongoose.Schema({
-    name: String,
-    quantity: Number,
-    linkedRecipe: String
+    name: { type: String, required: true },
+    quantity: { type: Number, required: true, min: 0 },
+    linkedRecipe: { type: String }
 });
 
 const GroceryItem = mongoose.model("GroceryItem", grocerySchema);
