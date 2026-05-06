@@ -20,7 +20,9 @@
       </p>
     </div>
 
-    <button class="bg-[#d4e9c4] text-[#3a4c31] px-6 py-3 rounded-full font-semibold shadow">
+    <button 
+      class="bg-[#d4e9c4] text-[#3a4c31] px-6 py-3 rounded-full font-semibold shadow"
+      (click)="syncToPantry()">
       Sync to Pantry →
     </button>
 
@@ -34,37 +36,29 @@
 
       <div class="flex justify-between items-center">
         <h2 class="text-2xl font-headline">Grouped by Recipe</h2>
-        <span class="text-sm text-gray-500">3 Recipes Active</span>
+        <span class="text-sm text-gray-500">{{ activeRecipeCount }} Recipes Active</span>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
 
         <!-- CARD -->
-        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition space-y-4">
+        <div *ngFor="let item of groceryItems" class="bg-white rounded-xl p-6 shadow-md space-y-4">
 
           <div class="flex justify-between items-center">
             <div>
-              <h3 class="text-xl font-semibold">Wild Mushroom Risotto</h3>
-              <p class="text-sm text-gray-500">Dinner for 4</p>
+              <h3 class="text-xl font-semibold">{{ item.name }}</h3>
+              <p class="text-sm text-gray-500">Qty: {{ item.quantity }}</p>
             </div>
-
-            <img class="w-14 h-14 rounded-lg object-cover"
-              src="https://images.themodernproper.com/production/posts/2019/Wild-Mushroom-Risotto-25.jpg?w=600&q=82&auto=format&fit=crop&dm=1726712380&s=f32ed9710208311543f0a435dfcf2e8d" />
           </div>
 
           <label class="flex gap-3 items-center">
-            <input type="checkbox" />
-            <span>500g Arborio Rice</span>
-          </label>
-
-          <label class="flex gap-3 items-center">
-            <input type="checkbox" />
-            <span>300g Oyster Mushrooms</span>
-          </label>
-
-          <label class="flex gap-3 items-center line-through opacity-50">
-            <input type="checkbox" checked />
-            <span>1L Vegetable Stock</span>
+            <input 
+              type="checkbox"
+              [(ngModel)]="item.checked"
+            />
+            <span [class.line-through]="item.checked">
+              {{ item.name }}
+            </span>
           </label>
 
         </div>
@@ -179,7 +173,10 @@
           <p class="text-sm text-gray-500 mb-2">Progress</p>
 
           <div class="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
-            <div class="bg-[#4f6144] w-[25%] h-full rounded-full"></div>
+            <div 
+              class="bg-[#4f6144] h-full rounded-full"
+              [style.width.%]="(checkedCount / groceryItems.length) * 100">
+            </div>
           </div>
 
           <p class="text-sm mt-2 text-[#4f6144] font-semibold">
