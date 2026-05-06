@@ -11,11 +11,13 @@ import { CommonModule } from '@angular/common';
 export class Pantry implements OnInit {
 
   pantryItems: any[] = [];
+  lowStockItems: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.getPantryItems();
+    this.getLowStock();
   }
 
   getPantryItems() {
@@ -45,5 +47,12 @@ export class Pantry implements OnInit {
       .subscribe(() => {
         this.getPantryItems();
       });
+  }
+
+  getLowStock() {
+  this.http.get('http://localhost:3000/api/pantry/low-stock')
+    .subscribe((data: any) => {
+      this.lowStockItems = data;
+    });
   }
 }
