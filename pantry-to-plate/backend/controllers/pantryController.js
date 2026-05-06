@@ -6,7 +6,8 @@ exports.getPantryItems = async (req, res) => {
         const items = await PantryItem.find();
         res.json(items);
     } catch (error) {
-        res.status(500).json({ message: "Error fetching pantry items" });
+        console.error("Error fetching pantry items:", error);
+        res.status(500).json({ message: error.message });
     }
 };
 
