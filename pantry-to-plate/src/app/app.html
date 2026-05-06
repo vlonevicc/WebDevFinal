@@ -1,25 +1,19 @@
 <div class="layout">
-
   <!--  OVERLAY (mobile only) -->
-  <div 
-    *ngIf="isSidebarOpen" 
+  <div
+    *ngIf="isSidebarOpen"
     class="fixed inset-0 bg-black/30 z-40 md:hidden"
-    (click)="isSidebarOpen = false">
-  </div>
+    (click)="isSidebarOpen = false"
+  ></div>
 
   <!--  SIDEBAR -->
-  <aside 
+  <aside
     class="fixed top-0 left-0 h-full w-64 bg-[#f5f4f0] transform transition-transform z-50 md:translate-x-0 flex flex-col px-6 py-8"
     [class.translate-x-0]="isSidebarOpen"
     [class.-translate-x-full]="!isSidebarOpen"
   >
-
     <!--  CLOSE BUTTON (mobile only) -->
-    <button 
-      class="mb-4 md:hidden text-lg"
-      (click)="isSidebarOpen = false">
-      ✕
-    </button>
+    <button class="mb-4 md:hidden text-lg" (click)="isSidebarOpen = false">✕</button>
 
     <!-- Logo -->
     <div class="mb-12">
@@ -29,56 +23,57 @@
 
     <!-- Nav -->
     <nav class="flex flex-col gap-2">
+      <a
+        routerLink="/"
+        routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]"
+      >
+        Discovery
+      </a>
 
-  <a routerLink="/" 
-     routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
-     [routerLinkActiveOptions]="{ exact: true }"
-     class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]">
-    Discovery
-  </a>
+      <a
+        routerLink="/cookbook"
+        routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]"
+      >
+        Cookbook
+      </a>
 
-  <a routerLink="/cookbook" 
-     routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
-     class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]">
-    Cookbook
-  </a>
+      <a
+        routerLink="/pantry"
+        routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]"
+      >
+        Pantry
+      </a>
 
-  <a routerLink="/pantry" 
-     routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
-     class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]">
-    Pantry
-  </a>
-
-  <a routerLink="/grocery" 
-     routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
-     class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]">
-    Grocery List
-  </a>
-
-</nav>
+      <a
+        routerLink="/grocery"
+        routerLinkActive="bg-[#e9e8e4] text-[#4f6144] font-semibold"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-[#e9e8e4]"
+      >
+        Grocery List
+      </a>
+    </nav>
 
     <!-- Button -->
-    <button class="mt-auto bg-[#4f6144] text-white py-3 rounded-full hover:bg-[#3e4f36] transition">
+    <button
+      (click)="addNewRecipe()"
+      class="mt-auto bg-[#4f6144] text-white py-3 rounded-full hover:bg-[#3e4f36] transition"
+    >
       + New Recipe
     </button>
-
   </aside>
 
   <!--  MAIN CONTENT -->
   <main class="md:ml-64">
-
     <!-- ☰ OPEN BUTTON (mobile only) -->
     <div class="md:hidden p-4">
-      <button 
-        class="text-xl"
-        (click)="isSidebarOpen = true">
-        ☰
-      </button>
+      <button class="text-xl" (click)="isSidebarOpen = true">☰</button>
     </div>
-      <app-topbar></app-topbar>
+    <app-topbar></app-topbar>
 
     <router-outlet></router-outlet>
-
   </main>
-
 </div>
