@@ -58,6 +58,18 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
+## Project Summary
+
+Pantry to Plate is a full-stack web application designed to help users manage household food inventory, generate grocery lists, and connect available pantry items with recipes. The system bridges the gap between meal planning and real-time food tracking by allowing users to see what they have, what they need, and what they can cook.
+
+The frontend is built using Angular and provides a modern, responsive user interface for interacting with pantry items, grocery lists, and recipes. Users can dynamically view and manage their food inventory, navigate between pages using a sidebar, and interact with features such as adding new recipes through modal-based input forms.
+
+The backend is developed using Node.js and Express.js, exposing RESTful API endpoints that support full CRUD functionality for pantry items, grocery lists, and recipes. Data is stored in MongoDB using Mongoose models with structured schemas for each collection, ensuring consistent and scalable data management.
+
+The application integrates frontend and backend communication through HTTP requests using Angular’s HttpClient. This enables real-time data updates, such as automatically reflecting newly added pantry items or recipes without requiring page reloads.
+
+Overall, Pantry to Plate demonstrates a complete full-stack architecture, combining UI design, API development, and database integration into a cohesive system focused on improving food organization and reducing waste.
+
 ## Team Roles
 
 Nathan: Backend development and Controller logic
